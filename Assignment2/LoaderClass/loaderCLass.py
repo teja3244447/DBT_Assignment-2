@@ -51,7 +51,7 @@ class PayerLoader(BaseLoader):
 
             cursor.execute(create_table_sql)
 
-            print(f"Loading into {table_name}...")
+            print(f"Loading data into {os.getenv('DATABASE')}.{os.getenv('SCHEMA')}.{table_name}")
 
             # write_pandas returns 4 values
             success = write_pandas(conn, df, table_name)
@@ -64,4 +64,5 @@ class PayerLoader(BaseLoader):
         finally:
             conn.close()
             print("Connection closed.")
+
 
