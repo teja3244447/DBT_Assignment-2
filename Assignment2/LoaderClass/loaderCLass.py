@@ -57,12 +57,13 @@ class PayerLoader(BaseLoader):
             success = write_pandas(conn, df, table_name)
 
             if success:
-                print(f"Loaded rows into {table_name} ✅")
+                print(f"Loaded rows into {table_name} ")
             else:
-                print("Load failed ❌")
+                print("Load failed ")
 
         finally:
             conn.close()
             print("Connection closed.")
+
 
 
